@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/f2d32ad7-21a8-418e-969b-645afa88e835/resourceGroups/teanslateeng/providers/Microsoft.Web/sites/translateengapp",
+    "appService.deploySubpath": "."
+}
