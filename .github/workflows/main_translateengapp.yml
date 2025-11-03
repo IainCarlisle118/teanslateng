@@ -25,6 +25,7 @@ jobs:
 
       - name: Build with dotnet
         run: dotnet build --configuration Release
+        working-directory: TEANSLATENG/Code
 
       - name: dotnet publish
         run: dotnet publish -c Release -o "${{env.DOTNET_ROOT}}/myapp"
@@ -52,4 +53,5 @@ jobs:
           app-name: 'translateengapp'
           slot-name: 'Production'
           package: .
+
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_208763CE93224AA38A8AE6D925742705 }}
