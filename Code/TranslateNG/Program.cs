@@ -1,4 +1,6 @@
+using Data.Interfaces;
 using Infrastructure.DAL;
+using Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +12,8 @@ var connectionString = builder.Configuration.GetConnectionString("MyAppCs");
 builder.Services.AddDbContext<TranslatengDbContext>(
     options => options.UseSqlServer(connectionString,
     b => b.MigrationsAssembly("Infrastructure")));
+
+builder.Services.AddTransient<ILanguagesRepository, LanguagesRespository>();
 
 var app = builder.Build();
 

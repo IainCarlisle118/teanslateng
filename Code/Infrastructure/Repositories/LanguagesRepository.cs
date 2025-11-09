@@ -36,7 +36,9 @@ namespace Infrastructure.Repositories
 
         public async virtual Task<Languages> GetById(Guid id)
         {
+            #pragma warning disable CS8603
             return await this.dbContext.FindAsync<Languages>(id);
+            #pragma warning restore CS8603
         }
     }
 }
