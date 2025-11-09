@@ -9,6 +9,6 @@ namespace Data.Interfaces
     {
         void Insert(Languages languagesToAdd);
         Task Update(Languages entity);
-        Task<Languages> GetById(Guid id);
+        // Task<Languages> GetById(Guid id);
     }
 }

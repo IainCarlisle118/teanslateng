@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Data.Entities;
 using System.Diagnostics.Tracing;
+using System.Reflection;
 
 namespace Infrastructure.DAL
 {
@@ -11,5 +12,10 @@ namespace Infrastructure.DAL
         }
 
         public DbSet<Languages> Languages { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+        }
     }
 }

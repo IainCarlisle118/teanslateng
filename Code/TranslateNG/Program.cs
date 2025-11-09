@@ -1,7 +1,15 @@
+using Infrastructure.DAL;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+var connectionString = builder.Configuration.GetConnectionString("MyAppCs");
+builder.Services.AddDbContext<TranslatengDbContext>(
+    options => options.UseSqlServer(connectionString,
+    b => b.MigrationsAssembly("Infrastructure")));
 
 var app = builder.Build();
 

@@ -34,9 +34,9 @@ namespace Infrastructure.Repositories
             await this.dbContext.SaveChangesAsync();
         }
 
-        public async virtual Task<Languages> GetById(Guid id)
-        {
-            return await this.dbContext.FindAsync<Languages>(id);
-        }
+        // public async virtual Task<Languages> GetById(Guid id)
+        // {
+        //     return await this.dbContext.FindAsync<Languages>(id);
+        // }
     }
 }
