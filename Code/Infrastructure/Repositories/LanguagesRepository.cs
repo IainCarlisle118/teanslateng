@@ -6,6 +6,7 @@ using System.Runtime.InteropServices.Marshalling;
 using System.Threading.Tasks;
 using Data.Entities;
 using Data.Interfaces;
+using Infrastructure.DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
@@ -13,10 +14,10 @@ namespace Infrastructure.Repositories
 {
     public class LanguagesRespository : ILanguagesRepository
     {
-        private readonly DbContext dbContext;
+        private readonly TranslatengDbContext dbContext;
         private readonly IConfiguration _config;
 
-        public LanguagesRespository(DbContext dbContext, IConfiguration config)
+        public LanguagesRespository(TranslatengDbContext dbContext, IConfiguration config)
         {
             this.dbContext = dbContext;
             this._config = config;
